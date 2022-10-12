@@ -16,7 +16,7 @@ public class ElectronicPageStepdefintion extends BaseCLass {
       pageFactory.getElectronic().ElectronicsUser();
     }
     @When("add product")
-      public void add_product() {
+      public void add_product() throws InterruptedException {
       pageFactory.getElectronic().ClickOnComputerHyperlinkAndAddItems();
     }
     @When("go to shopping cart page")
