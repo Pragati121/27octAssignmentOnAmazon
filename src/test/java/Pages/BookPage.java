@@ -12,6 +12,7 @@ import java.time.Duration;
 public class BookPage {
     WebDriver driver;
     WebDriverWait wait;
+    String Input = "//input[@name='%s']";
     By BookOption           = By.xpath("(//a[contains(text(),'Books')])[1]");
     By AddCArtButton        = By.xpath("//button[contains(@class,'button-2')][1]");
     By ShoppingcartButton   = By.xpath("//a[@class='ico-cart']");
@@ -19,12 +20,6 @@ public class BookPage {
     By CheckoutButton       = By.xpath("//button[contains(@class,'button-1 checkout-button')]");
     By RegisterButton       = By.xpath("//button[text()='Register']");
     By Femalebutton         = By.xpath("//input[@id=\"gender-female\"]");
-    By FirstNameTextbox     = By.xpath("//input[@name='FirstName']");
-    By LastNameTextbox      = By.xpath("//input[@name='LastName']");
-    By EmailTextbox         = By.xpath("//input[@name='Email']");
-    By AddressTextbox       = By.xpath("//input[@name='Company']");
-    By PasswordText         = By.xpath("//input[@name='Password']");
-    By ConfirmPasswordTextBox = By.xpath("//input[@name='ConfirmPassword']");
     By RegisterButon          = By.xpath("//button[@name='register-button']");
     By ContinueButton         = By.xpath("//a[contains(@class,'button-1')]");
 
@@ -64,12 +59,12 @@ public class BookPage {
         String Add   = sheet.getRow(1).getCell(3).getStringCellValue();
         String Pass    = sheet.getRow(1).getCell(4).getStringCellValue();
         String ConfPass  = sheet.getRow(1).getCell(5).getStringCellValue();
-        driver.findElement(FirstNameTextbox).sendKeys(Fname);
-        driver.findElement(LastNameTextbox).sendKeys(Lname);
-        driver.findElement(EmailTextbox).sendKeys(email);
-        driver.findElement(AddressTextbox).sendKeys(Add);
-        driver.findElement(PasswordText).sendKeys(Pass);
-        driver.findElement(ConfirmPasswordTextBox).sendKeys(ConfPass);
+        driver.findElement(By.xpath(String.format(Input, "FirstName"))).sendKeys(Fname);
+        driver.findElement(By.xpath(String.format(Input, "LastName"))).sendKeys(Lname);
+        driver.findElement(By.xpath(String.format(Input, "Email"))).sendKeys(email);
+        driver.findElement(By.xpath(String.format(Input, "Company"))).sendKeys(Add);
+        driver.findElement(By.xpath(String.format(Input, "Password"))).sendKeys(Pass);
+        driver.findElement(By.xpath(String.format(Input, "ConfirmPassword"))).sendKeys(ConfPass);
         driver.findElement(RegisterButon).click();
         driver.findElement(ContinueButton).click();
     }

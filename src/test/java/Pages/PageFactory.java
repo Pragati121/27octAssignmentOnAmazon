@@ -6,6 +6,8 @@ public class PageFactory
    private HomePage HomeMethod;
     private ElectronicPage ElectronicMethod;
     private BookPage BookMethod;
+    private ApparelPage ApparelMethod;
+    private ElectronicPageEnm ElectroEnmMethod;
     WebDriver driver;
 
     public PageFactory(WebDriver driver)
@@ -30,6 +32,18 @@ public class PageFactory
             BookMethod= new BookPage(driver);
         }
         return BookMethod;
+    }
+    public ApparelPage getApparel(){
+        if(ApparelMethod==null){
+            ApparelMethod=new ApparelPage(driver);
+        }
+        return ApparelMethod;
+    }
+    public ElectronicPageEnm getElectrEnm() {
+        if (ElectroEnmMethod == null) {
+            ElectroEnmMethod = new ElectronicPageEnm(driver);
+        }
+        return ElectroEnmMethod;
     }
 }
 
