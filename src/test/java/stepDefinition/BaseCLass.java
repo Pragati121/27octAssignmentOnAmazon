@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
@@ -18,7 +19,7 @@ public class BaseCLass {
         if (browserName.equalsIgnoreCase("Chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            driver.navigate().to("https://demo.nopcommerce.com/");
+            driver.navigate().to("https://www.amazon.in/");
             driver.manage().window().maximize();
             pageFactory = new PageFactory(driver);
 
@@ -26,7 +27,7 @@ public class BaseCLass {
         else if (browserName.equalsIgnoreCase("FireFox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-            driver.navigate().to("https://demo.nopcommerce.com/");
+            driver.navigate().to("https://www.amazon.in/");
             driver.manage().window().maximize();
             pageFactory = new PageFactory(driver);
         }

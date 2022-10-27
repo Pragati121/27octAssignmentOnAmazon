@@ -16,11 +16,11 @@ public enum ElectronicPageEnum {
     Choosestate("BillingNewAddress.StateProvinceId");
 
     private String name;
-    ElectronicPageEnum(String name)//constructor
+    ElectronicPageEnum(String name)
     {
         this.name = name;
     }
-    public String getResourcesName() //method
+    public String getResourcesName()
     {
         return name;
     }
